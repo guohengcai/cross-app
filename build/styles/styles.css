@@ -29,3 +29,27 @@ header {
   #task-form button {
     max-width: 100px;
     padding: 5px; }
+
+#task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  #task-list li {
+    padding: 1em;
+    border-bottom: 1px soild #cccccc; }
+    #task-list li .task-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
+      #task-list li .task-container .task-buttons {
+        display: flex;
+        flex-direction: row; }
+        #task-list li .task-container .task-buttons button {
+          width: 48px;
+          height: 48px;
+          font-size: 1.5em;
+          background-color: transparent;
+          border: 1px soild transparent; }
+        #task-list li .task-container .task-buttons button:focus {
+          outline: none;
+          background-color: #cccccc; }
