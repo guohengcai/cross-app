@@ -30,7 +30,7 @@ class ListView{
             let id = task.id;
             let name = task.name;
             let status  = task.status;
-            let template = `<li id="${id}">
+            let template = `<li id="${id}" data-status="${status}">
                     <div class ="task-container">
                     <div class ="task-name">${name}</div>
                     <div class= "task-buttons">
@@ -50,10 +50,35 @@ class ListView{
         
     }
 }
+
+class DataStorage{
+    storage:any;
+    constructor(){
+    this.storage= window.localStorage;    
+    }
+    store(array:Array<Task>){
+        let data =JSON.stringify(array);
+        this.storage.setItem('taskData',data);
+    }
+    read(){
+        let data = this.storage.getItem('taskdata');
+        let array = JSON.parse(data);
+        return array;
+    }
+}
+
 //initialize
-var taskarray =[];
+var taskarray:Array<any> =[];
+var taskstorage= new DataStorage();
 var taskmanager = new TaskManager(taskarray);
 var listview = new ListView('task-list');
+
+window.addEventListener('load',()=>{
+   let taskdata = taskstorage.read();
+    //taskarray = taskdata;
+    taskdata.forEach((item)=>{taskarray.push(item);});
+    listview.render(taskarray);
+});
 
 //reference to form
 const taskform = (<HTMLFormElement>document.getElementById('task-form'));

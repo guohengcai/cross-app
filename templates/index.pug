@@ -1,23 +1,18 @@
 doctype html
 html
   head
-    title To Do List
-    meta(name='viewport',content='width=device-width,initial-scale=1.0')
-    link(rel='stylesheet',href='./styles/styles.css')
+    title To do list
+    link(href='styles/styles.css',rel='stylesheet')
+    meta(name='viewport',content='width=device-width,initial-scale=1')
   body
     .app
-      header.header
-        .row
-          .logo
-            img.logo(src='images/logo.png')
-          h1.app-title To Do 
-        form#task-form
-          
-            input#task-input(type='text',placeholder='Add A Task')
-            button#task-add(type='submit') Add
+      header
+        img.logo(src='images/logo.png')
+        h1 To do
+      form#task-form
+        input#task-input(type='text',placeholder='add a task')
+        button#task-add(type='submit') Add
       main
         ul#task-list
-          li buy milk
-          li finish assignments
-    footer
-    script(src='./js/main.js')
+      footer
+  script(src='./js/main.js')

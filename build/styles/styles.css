@@ -1,55 +1,71 @@
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: arial, helvetica, sans-serif; }
 
 header {
   background-color: #e5edfc;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
   header .logo {
-    max-width: 60px; }
+    padding: 5px;
+    max-width: 48px; }
   header h1 {
     margin: 0;
-    padding: 5px; }
+    font-size: 1.5em;
+    padding: 5px;
+    color: #1a59c8; }
 
 #task-form {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  font-size: 1.2em; }
   #task-form input {
     flex: 1;
-    padding: 5px;
+    padding: 10px;
     box-sizing: border-box;
     border: 1px solid #74a0ed;
-    background-color: #e5edfc; }
+    background-color: #fbfdff;
+    font-size: inherit; }
   #task-form input:focus {
     background-color: white;
     outline: none; }
   #task-form button {
     max-width: 100px;
-    padding: 5px; }
+    padding: 10px;
+    background-color: #1a59c8;
+    color: white;
+    border: 1px solid #74a0ed;
+    font-size: inherit; }
 
 #task-list {
   margin: 0;
   padding: 0;
   list-style: none; }
   #task-list li {
-    padding: 1em;
-    border-bottom: 1px soild #cccccc; }
-    #task-list li .task-container {
+    border-bottom: 1px solid #a1bff3; }
+  #task-list .task-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    #task-list .task-container .task-name {
+      font-size: 1.5em;
+      color: #5d91ea;
+      padding: 10px;
+      flex: 1; }
+    #task-list .task-container .task-buttons {
+      width: 120px;
       display: flex;
-      flex-direction: row;
-      justify-content: space-between; }
-      #task-list li .task-container .task-buttons {
-        display: flex;
-        flex-direction: row; }
-        #task-list li .task-container .task-buttons button {
-          width: 48px;
-          height: 48px;
-          font-size: 1.5em;
-          background-color: transparent;
-          border: 1px soild transparent; }
-        #task-list li .task-container .task-buttons button:focus {
-          outline: none;
-          background-color: #cccccc; }
+      flex-direction: row; }
+      #task-list .task-container .task-buttons button {
+        width: 60px;
+        box-sizing: border-box;
+        padding: 12px;
+        background-color: transparent;
+        color: #5d91ea;
+        font-size: 1.5em;
+        border: 1px solid transparent; }
+      #task-list .task-container .task-buttons button:focus {
+        outline: none; }
