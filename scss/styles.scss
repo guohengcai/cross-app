@@ -99,5 +99,12 @@ header{
         outline: none;
       }
     }
+      li[data-status="ture"]{
+          background-color: aqua;
+          .task-name{
+              text-decoration: line-through;
+              opacity: 0.5;
+          }
+      }
   }
 }
