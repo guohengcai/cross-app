@@ -7,7 +7,7 @@ export class Template{
   }
   populate(id:string, name:string, status:string){
     let idtime:number = parseInt(id)
-    let timestamp = moment( idtime ).format('dddd');
+    let timestamp = moment( idtime ).calendar();
     let task:string =  `<li id="${id}" data-status="${status}">
                 <div class="task-container">
                 <div class="task-label">
