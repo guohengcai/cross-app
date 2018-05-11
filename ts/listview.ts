@@ -13,7 +13,7 @@ export class ListView{
     //clear the view
     //render array using template
     items.forEach( (task) => {
-    let id= task.id; 
+    let id= task.id;
     let name = task.name;
     let status = task.status.toString();
     let item = tasktemplate.populate(id,name,status);
